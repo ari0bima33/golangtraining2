@@ -1,0 +1,8 @@
+Catatan: 
+1. Buat terlebih dahulu Database dengan nama golang_training.
+2. Jalankan Query pada file "Query_Create_Table_In_PostgreSQL.txt" untuk membuat table-table yang dibutuhkan (user,photo,comment,socialmedia)
+3. Untuk Menjalankan/Build aplikasi dengan Menjalankan/Build file cmd/core/main.go difolder final-project
+4. Untuk testing bisa dengan mengimport collection postman Final_Project_Golang.postman_collection.json
+
+
+Terima Kasih ^-^

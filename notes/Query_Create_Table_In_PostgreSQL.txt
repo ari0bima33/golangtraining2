@@ -1,0 +1,80 @@
+-- 1. Create Table User
+
+USE golang_traing;
+
+CREATE SEQUENCE user_id_seq;
+
+CREATE TABLE IF NOT EXISTS public."user"
+(
+    id integer NOT NULL DEFAULT nextval('user_id_seq'::regclass),
+    username character varying(100) COLLATE pg_catalog."default",
+    email character varying(100) COLLATE pg_catalog."default",
+    password text COLLATE pg_catalog."default",
+    age integer,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    CONSTRAINT user_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+
+--2. Create Table Photo
+
+USE golang_traing;
+
+CREATE SEQUENCE photo_id_seq;
+
+CREATE TABLE IF NOT EXISTS public.photo
+(
+    id integer NOT NULL DEFAULT nextval('photo_id_seq'::regclass),
+    title character varying(100) COLLATE pg_catalog."default",
+    caption character varying(100) COLLATE pg_catalog."default",
+    photo_url character varying(250) COLLATE pg_catalog."default",
+    user_id integer,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    CONSTRAINT photo_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+
+--3. Create Table Comment
+
+USE golang_traing;
+
+CREATE SEQUENCE comment_id_seq;
+
+CREATE TABLE IF NOT EXISTS public.comment
+(
+    id integer NOT NULL DEFAULT nextval('comment_id_seq'::regclass),
+    user_id integer,
+    photo_id integer,
+    message character varying(250) COLLATE pg_catalog."default",
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    CONSTRAINT comment_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+
+--4. Create Table SocialMedia
+
+USE golang_traing;
+
+CREATE SEQUENCE socialmedia_id_seq;
+
+CREATE TABLE IF NOT EXISTS public.socialmedia
+(
+    id integer NOT NULL DEFAULT nextval('socialmedia_id_seq'::regclass),
+    name character varying(100) COLLATE pg_catalog."default",
+    social_media_url text COLLATE pg_catalog."default",
+    user_id integer,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    CONSTRAINT somed_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
